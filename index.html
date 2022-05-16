@@ -6,7 +6,7 @@
     ================================================== -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Khronos 2.0 - Demo</title>
+    <title>Khronos 2.0 - Particles</title>
 
     <script>
         document.documentElement.classList.remove('no-js');
@@ -15,7 +15,8 @@
 
     <!-- CSS
     ================================================== -->
-    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
 
     <!-- favicons
     ================================================== -->
@@ -26,7 +27,7 @@
 
 </head>
 
-<body id="top">
+<body id="top" class="theme-particles">
 
 
     <!-- preloader
@@ -36,102 +37,74 @@
     </div>
 
 
-    <!-- header 
+    <!-- page wrap
     ================================================== -->
-    <header>
-        <div class="row">
-            <div class="column lg-12 text-center">
-
-                <h1>Khronos 2.0</h1>
-
-                <p class="lead">
-                Khronos is a creative pack of coming soon template pages. Its elegant and clean design makes it
-                perfect for creative people, corporate, agency or anyone who is currently building their
-                site and want to show a coming soon page in a creative way. Khronos is available in three style 
-                variations: static, slideshow, and particle background. It is fully responsive and retina ready, 
-                looks great on any screen and devices.
-                </p>
-
-            </div>
-        </div>
-    </header> <!-- end header -->
+    <div class="s-pagewrap">
 
 
-    <!-- main content
-    ================================================== -->
-    <main>
-        <div class="row block-lg-one-third block-md-one-half block-tab-whole">
-           
-            <div class="column entry">
-                <div class="entry__thumb">
-                    <a href="index-static.html" title="static background">
-                        <img src="images/demo/khronos-static.jpg" srcset="images/demo/khronos-static.jpg 1x, images/demo/khronos-static@2x.jpg 2x" alt="">
+        <!-- # header
+        ================================================== -->
+        <header class="s-header">
+            <div class="row s-header__content">
+
+                <div class="s-header__logo">
+                    <a class="logo" href="index-particles.html">
+                        <img src="img/logo.png" alt="Homepage">
                     </a>
                 </div>
-                <div class="entry__title">
-                    <h3>Static Background</h3>
-                </div>
-            </div>
+            </div> <!-- end s-header__content -->
+        </header> <!-- end s-header -->
 
-            <div class="column entry">
-                <div class="entry__thumb">
-                    <a href="index-slides.html" title="slideshow background">
-                        <img src="images/demo/khronos-slides.jpg" srcset="images/demo/khronos-slides.jpg 1x, images/demo/khronos-slides@2x.jpg 2x" alt="">
-                    </a>
-                </div>
-                <div class="entry__title">
-                    <h3>Slideshow Background</h3>
-                </div>
-            </div>
 
-            <div class="column entry">
-                <div class="entry__thumb">
-                    <a href="index-particles.html" title="particles background">
-                        <img src="images/demo/khronos-particles.jpg" srcset="images/demo/khronos-particles.jpg 1x, images/demo/khronos-particles@2x.jpg 2x" alt="">
-                    </a>
+        <!-- # intro 
+        ================================================== -->
+        <section id="intro" class="s-intro">
+
+            <div id="particles-js" class="s-intro__particles"></div>
+
+            <div class="row s-intro__content">
+                <div class="column lg-12">
+                    
+                    <div class="counter">
+                        <div class="counter__time">
+                            <span class="ss-day">Coming</span>
+                            <span></span>
+                        </div>
+                        <div class="counter__time">
+                            <span class="ss-hour"></span>
+                            <span></span>
+                        </div>
+                        <div class="counter__time minutes">
+                            <span class="ss-minute">Soon</span>
+                            <span></span>
+                        </div>
+                    </div>  <!-- end counter -->
+
+                    <div class="s-intro__content-bottom">
+                        <h1 class="s-intro__content-title">Our site is launching soon.</h1>
+                        <p>
+                        Try to come back later.
+                        </p>
+                    </div>
+
                 </div>
-                <div class="entry__title">
-                    <h3>Particles Background</h3>
-                </div>
-            </div>
-            
-        </div>
-    </main> <!--  end main -->
+            </div> <!-- intro__content -->
+
+        </section> <!-- end s-intro -->
+
+        <section id="info" class="s-info">
+        </section> <!-- end s-info -->
+
+
+    </div> <!-- end pagewrap -->
+
 
     <!-- Java Script
     ================================================== -->
-    <script>
-        
-        (function(html) {
-
-            'use strict';
-
-            html.className = html.className.replace(/\bno-js\b/g, '') + 'js';
-
-            const body = document.querySelector('body');
-            const preloader = document.querySelector('#preloader');
-
-            if (!preloader) return;
-
-            window.addEventListener('load', function() {
-
-                body.classList.remove('ss-preload');
-                body.classList.add('ss-loaded');
-
-                preloader.addEventListener('transitionend', function afterTransition(e) {
-                    if (e.target.matches('#preloader'))  {
-                        body.classList.add('ss-show');
-                        e.target.style.display = 'none';
-                        preloader.removeEventListener(e.type, afterTransition);
-                    }
-                });
-
-            });
-
-        })(document.documentElement);
-    
-    </script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/particles.min.js"></script>
+    <script src="js/particle-settings.js"></script>
 
 </body>
-
 </html>
